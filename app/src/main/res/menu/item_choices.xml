@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/buy_item"
+        android:title="Buy"
+        android:icon="@drawable/ic_buy"
+        app:showAsAction="ifRoom"
+        />
+    <item android:id="@+id/user_profile_item"
+        android:title="User Profile"
+        android:icon="@drawable/ic_profile"
+        app:showAsAction="ifRoom"
+        />
+    <item android:id="@+id/sell_item"
+        android:title="Sell an Item"
+        android:icon="@drawable/ic_sell"
+        app:showAsAction="ifRoom"
+        />
+</menu>

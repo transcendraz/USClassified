@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/user_profile_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:maxWidth="115dp"
+        android:maxHeight="115dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toStartOf="@+id/user_rating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addFriendButton"
+        android:layout_width="60dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="77dp"
+        android:clickable="true"
+        android:onClick="sendFriendRequest"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="@+id/user_rating"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_sell"
+        />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/user_details"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginBottom="142dp"
+        app:chipSpacing="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/explore_include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:singleLine="true">
+
+        <Button
+            android:id="@+id/my_items"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="toViewItem"
+            android:text="@string/user_my_items" />
+
+        <Button
+            android:id="@+id/my_friends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="toViewFriends"
+            android:text="Friends" />
+
+        <Button
+            android:id="@+id/my_wishlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="toViewWishlist"
+            android:text="WishList" />
+
+<!--        <Button-->
+<!--            android:id="@+id/my_settings"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/user_settings" />-->
+        <Button
+            android:id="@+id/my_friend_requests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="toViewFriendRequest"
+            android:text="NEW FRIENDS" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="119dp"
+        android:layout_marginTop="176dp"
+        android:gravity="right"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/user_profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="none"
+            android:text="Name"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/user_buy_and_sell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="none" />
+
+        <TextView
+            android:id="@+id/user_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="none"
+            android:text="(555) 555-5555"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/user_email"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:ems="10"
+            android:inputType="none"
+            android:text="student@usc.edu"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/user_profile_include"
+        layout="@layout/bottom_nav"
+        tools:layout_editor_absoluteY="675dp" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RatingBar
+        android:id="@+id/user_rating"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:numStars="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <LinearLayout
+        android:id="@+id/labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/name_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="@string/name_label"
+            tools:text="@string/name_label" />
+
+        <TextView
+            android:id="@+id/blank_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buy/Sell Count:" />
+
+        <TextView
+            android:id="@+id/phone_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="@string/phone_label"
+            tools:text="@string/phone_label" />
+
+        <TextView
+            android:id="@+id/email_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="@string/email_label" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/user_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/labels"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_profile_image"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <TextView
+        android:id="@+id/power_user_badge_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:text="Power User"
+        app:layout_constraintStart_toEndOf="@+id/user_badge"
+        app:layout_constraintTop_toTopOf="@+id/user_badge" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

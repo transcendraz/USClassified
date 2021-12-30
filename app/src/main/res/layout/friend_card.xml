@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:background="@drawable/recycler_view_border">
+
+        <ImageView
+            android:id="@+id/friend_card_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="100dp"
+            android:maxHeight="100dp"
+            android:adjustViewBounds="true"
+            android:padding="2dp"
+            app:srcCompat="@drawable/ic_account_circle_black_100dp" />
+
+        <TextView
+            android:id="@+id/friend_card_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/friend_card_img"
+            android:layout_toRightOf="@+id/friend_card_img"
+            android:text="Card Line!"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/friend_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/friend_card_text"
+            android:text="@string/placeholder"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/friend_delete"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="249dp"
+            android:layout_marginLeft="249dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="0dp"
+            android:layout_toEndOf="@+id/friend_card_img"
+            android:layout_toRightOf="@+id/friend_card_img"
+            app:srcCompat="@drawable/ic_delete"
+            tools:layout_alignParentBottom="false" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
